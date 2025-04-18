@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutoutane Takey | Computer Science Student</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3B82F6, #8B5CF6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-xl font-bold gradient-text">BT.</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-center space-x-8">
+                        <a href="#home" class="text-dark hover:text-primary font-medium transition">Home</a>
+                        <a href="#about" class="text-dark hover:text-primary font-medium transition">About</a>
+                        <a href="#work" class="text-dark hover:text-primary font-medium transition">Work</a>
+                        <a href="#skills" class="text-dark hover:text-primary font-medium transition">Skills</a>
+                        <a href="#contact" class="text-dark hover:text-primary font-medium transition">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button class="mobile-menu-button p-2 rounded-md text-dark hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                    Hi, I'm <span class="gradient-text">Boutoutane Takey</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-medium mb-6 text-gray-600">
+                    L3 Computer Science Student | Full Stack Developer
+                </h2>
+                <p class="text-lg text-gray-500 mb-8 max-w-lg">
+                    Passionate about building innovative solutions at the intersection of information systems and AI. 
+                    Currently pursuing my bachelor's degree while developing practical applications that solve real-world problems.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-600 transition shadow-md hover:shadow-lg">
+                        View My Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-blue-50 transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                    <img src="https://media.licdn.com/dms/image/v2/D4D03AQHKImyYcx3wJQ/profile-displayphoto-shrink_800_800/B4DZTqzHVYG8Ac-/0/1739106056416?e=1750291200&v=beta&t=-Clg0qb3WE9JkQob5Kut5lR84r6Qi4UZasefwwKXMcc" 
+                         alt="Boutoutane Takey" 
+                         class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-2xl shadow-sm">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold mb-6">Who I Am</h3>
+                <p class="text-gray-600 mb-6">
+                    I'm a full-stack developer and third-year computer science student at Badji Mokhtar University - Annaba, specializing in information systems. 
+                    I've developed several applications ranging from AI models to practical community solutions, combining technical skills with creative problem-solving.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    My experience includes building web and mobile applications, creating AI models, and participating in hackathons. 
+                    I'm particularly interested in how technology can be leveraged to improve healthcare and public services.
+                </p>
+                <p class="text-gray-600 mb-6">
+                    When I'm not coding, I enjoy participating in tech competitions, learning new frameworks, and collaborating on open-source projects.
+                </p>
+                <div class="flex gap-4">
+                    <a href="https://www.linkedin.com/in/takey-boutoutane-93523b308/" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-primary hover:bg-blue-50 transition">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/takibttn" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-primary hover:bg-blue-50 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://x.com/takibt2" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-primary hover:bg-blue-50 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.instagram.com/taki__bttn/?next=%2F" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:text-primary hover:bg-blue-50 transition">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold mb-6">My <span class="gradient-text">Journey</span></h3>
+                <div class="space-y-8">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Hackathon Finalist</h4>
+                            <p class="text-gray-500 text-sm mb-1">NoCode Hackathon & TechGeeks Hackathon</p>
+                            <p class="text-gray-600">
+                                Reached finals in competitive coding competitions showcasing innovative solutions.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Promoter & Food Service</h4>
+                            <p class="text-gray-500 text-sm mb-1">OMO & One Piece Fast Food</p>
+                            <p class="text-gray-600">
+                                Gained valuable customer service and teamwork experience in retail and food service.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">B.S. Computer Science</h4>
+                            <p class="text-gray-500 text-sm mb-1">Badji Mokhtar University - Annaba • 2021 - Present</p>
+                            <p class="text-gray-600">
+                                Information Systems major with hands-on experience in full-stack development and AI.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Projects</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Project 1 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-md relative group">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="HemoCare" 
+                     class="w-full h-64 object-cover">
+                <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-4">
+                    <h3 class="text-white text-xl font-bold mb-2">HemoCare</h3>
+                    <p class="text-gray-200 mb-4">Application for blood donation management system</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Flutter</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Dart</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Firebase</span>
+                    </div>
+                    <a href="https://github.com/takibttn/hemocare.git" target="_blank" class="mt-4 text-white hover:underline inline-flex items-center">
+                        View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-md relative group">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Ma Commune" 
+                     class="w-full h-64 object-cover">
+                <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-4">
+                    <h3 class="text-white text-xl font-bold mb-2">Ma Commune</h3>
+                    <p class="text-gray-200 mb-4">Municipality service application for citizens</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Java</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">JavaFX</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">MySQL</span>
+                    </div>
+                    <a href="https://github.com/takibttn/ihm.git" target="_blank" class="mt-4 text-white hover:underline inline-flex items-center">
+                        View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card rounded-xl overflow-hidden shadow-md relative group">
+                <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                     alt="Qareeb" 
+                     class="w-full h-64 object-cover">
+                <div class="project-overlay absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 flex flex-col justify-end p-6 transition-all duration-300 transform translate-y-4">
+                    <h3 class="text-white text-xl font-bold mb-2">Qareeb</h3>
+                    <p class="text-gray-200 mb-4">Face tracking model with GUI implementation</p>
+                    <div class="flex gap-2">
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">Python</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">OpenCV</span>
+                        <span class="px-3 py-1 bg-primary/20 text-primary text-xs rounded-full">AI</span>
+                    </div>
+                    <a href="https://github.com/takibttn/facetracker.git" target="_blank" class="mt-4 text-white hover:underline inline-flex items-center">
+                        View on GitHub <i class="fas fa-external-link-alt ml-1 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12">
+            <a href="https://github.com/takibttn?tab=repositories" target="_blank" class="inline-flex items-center px-6 py-3 border border-primary text-primary rounded-lg font-medium hover:bg-blue-50 transition">
+                View All Projects
+                <i class="fas fa-arrow-right ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white rounded-2xl shadow-sm">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Skills</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+            <!-- Skill 1 -->
+            <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-md transition">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl text-primary">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3 class="font-semibold mb-2">JavaScript</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+                </div>
+            </div>
+            
+            <!-- Skill 2 -->
+            <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-md transition">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl text-primary">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Python</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+                </div>
+            </div>
+            
+            <!-- Skill 3 -->
+            <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-md transition">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl text-primary">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3 class="font-semibold mb-2">HTML/CSS</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                </div>
+            </div>
+            
+            <!-- Skill 4 -->
+            <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-md transition">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl text-primary">
+                    <i class="fab fa-figma"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Figma</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 60%"></div>
+                </div>
+            </div>
+            
+            <!-- Skill 5 -->
+            <div class="text-center p-6 rounded-xl bg-gray-50 hover:shadow-md transition">
+                <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-4xl text-primary">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3 class="font-semibold mb-2">Dart/Flutter</h3>
+                <div class="w-full bg-gray-200 rounded-full h-2">
+                    <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+            <div class="w-20 h-1 bg-primary mx-auto"></div>
+        </div>
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <h3 class="text-2xl font-semibold mb-6">Contact <span class="gradient-text">Information</span></h3>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Email</h4>
+                            <p class="text-gray-600">boutoutane.takey@univ-annaba.dz</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Phone</h4>
+                            <p class="text-gray-600">+213 770 67 13 30</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-primary">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Location</h4>
+                            <p class="text-gray-600">UV12 Chaiba, Sidi Amar, Annaba</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                        <input type="text" id="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                        <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary"></textarea>
+                    </div>
+                    <button type="submit" class="w-full px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-blue-600 transition shadow-md hover:shadow-lg">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-xl font-bold gradient-text">BT.</span>
+                    <p class="mt-2 text-gray-400">© 2023 Boutoutane Takey. All rights reserved.</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                    <a href="https://github.com/takibttn" target="_blank" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
