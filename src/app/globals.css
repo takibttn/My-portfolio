@@ -10,8 +10,8 @@
   --moss-light: #dfe7dd;
   --sand: #e8e0d4;
   --white: #fcfcf8;
-  --display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --sans: "Helvetica Neue", "Segoe UI", Arial, sans-serif;
+  --display: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
 }
 
 * {
