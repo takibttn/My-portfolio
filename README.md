@@ -29,6 +29,25 @@ npm run build
 
 Portfolio content lives in [`src/data/portfolio.ts`](src/data/portfolio.ts). Update the profile details, project links, education, and skill groups there. The layout and design system are in [`src/app/globals.css`](src/app/globals.css).
 
-## Deployment
+## Deploy to Vercel
 
-This is a standard Next.js application and can be deployed to Vercel or any platform that supports a Next.js build. Set `NEXT_PUBLIC_SITE_URL` to the production origin before building so social sharing metadata uses the correct domain.
+This project uses Vercel's standard Next.js setup. The included `vercel.json` explicitly identifies the framework, while Vercel uses the existing `npm run build` script automatically.
+
+### Dashboard deployment
+
+1. Push the project to a Git provider.
+2. In Vercel, choose **Add New → Project** and import the repository.
+3. Keep the detected framework as **Next.js** and the build command as `npm run build`.
+4. Deploy the project.
+5. Add a custom domain if desired, then set `NEXT_PUBLIC_SITE_URL` to the production origin, for example `https://portfolio.example.com`, and redeploy.
+
+### CLI deployment
+
+Install the Vercel CLI and follow its login prompt:
+
+```bash
+npm install -g vercel
+vercel
+```
+
+Use `vercel --prod` for a production deployment. The app falls back to the Vercel deployment URL for metadata when `NEXT_PUBLIC_SITE_URL` is not set, and falls back to `http://localhost:3000` during local development.
