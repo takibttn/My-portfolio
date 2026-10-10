@@ -1,10 +1,11 @@
 import { profile, socialLinks } from "@/data/portfolio";
+import { sectionLabel } from "@/lib/format";
 
-export function Contact() {
+export function Contact({ index = 6 }: { index?: number }) {
   return (
     <section className="contact" id="contact" aria-labelledby="contact-title">
       <div className="container">
-        <p className="contact__label">05 / Get in touch</p>
+        <p className="contact__label">{sectionLabel(index, "Get in touch")}</p>
         <div className="contact__content">
           <h2 id="contact-title">
             Let&apos;s build something

@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "hemocare",
+    "category": "Mobile product",
+    "title": "HemoCare",
+    "description": "An intelligent mobile application that digitizes the blood donor process, making donor discovery and participation easier to manage.",
+    "stack": ["Flutter", "Dart", "Firebase"],
+    "href": "https://github.com/takibttn/hemocare.git",
+    "theme": "moss"
+  },
+  {
+    "slug": "face-recognition",
+    "category": "Applied machine learning",
+    "title": "Face Recognition Model",
+    "description": "A real-time face recognition system built with data preprocessing, TensorFlow, and OpenCV for live detection.",
+    "stack": ["Python", "TensorFlow", "OpenCV"],
+    "href": "https://github.com/takibttn/facetracker.git",
+    "theme": "sand"
+  }
+]

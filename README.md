@@ -27,7 +27,48 @@ npm run build
 
 ## Updating content
 
-Portfolio content lives in [`src/data/portfolio.ts`](src/data/portfolio.ts). Update the profile details, project links, education, and skill groups there. The layout and design system are in [`src/app/globals.css`](src/app/globals.css).
+All portfolio content lives in plain JSON files inside the [`content/`](content) directory. Edit these to add or change what appears on the site — you do **not** need to touch any TypeScript or component code.
+
+| File                       | Controls                                                       |
+| -------------------------- | -------------------------------------------------------------- |
+| `content/profile.json`     | Name, role, location, email, availability line                  |
+| `content/social.json`      | Social links (GitHub, LinkedIn, …)                             |
+| `content/projects.json`    | Project cards                                                  |
+| `content/experience.json`  | Work-experience entries (section hides when the array is empty) |
+| `content/education.json`   | Education entries                                                |
+| `content/skills.json`      | Skill groups                                                     |
+
+### Adding a project
+
+Append an object to the array in `content/projects.json`. The `01`, `02`, … numbers are generated automatically from the order, and `theme` is optional (it falls back to an alternating moss/sand scheme).
+
+```json
+{
+  "slug": "my-app",
+  "category": "Web platform",
+  "title": "My App",
+  "description": "What it does and why it matters.",
+  "stack": ["Next.js", "TypeScript"],
+  "href": "https://github.com/you/my-app"
+}
+```
+
+### Adding work experience
+
+Append an object to `content/experience.json`. Once it has at least one entry, the **Experience** section appears automatically and the section numbers below it shift down for you. Set `href` to make the role a link; `description` is optional.
+
+```json
+{
+  "period": "2024 — Present",
+  "role": "Software Engineer",
+  "organization": "Company",
+  "description": "What you did."
+}
+```
+
+Adding or reordering entries in `education.json` and `skills.json` works the same way.
+
+The layout and design system are in [`src/app/globals.css`](src/app/globals.css). The bridge between the JSON files and the UI is [`src/data/portfolio.ts`](src/data/portfolio.ts), which reads the content, validates it, and derives the auto-numbering and theme fallbacks — you normally won't need to edit it.
 
 ## Deploy to Vercel
 

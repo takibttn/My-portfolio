@@ -1,13 +1,4 @@
-type Project = {
-  slug: string;
-  number: string;
-  category: string;
-  title: string;
-  description: string;
-  stack: readonly string[];
-  href: string;
-  theme: "moss" | "sand";
-};
+import type { Project } from "@/data/types";
 
 type ProjectCardProps = {
   project: Project;

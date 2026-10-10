@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Languages",
+    "skills": ["Python", "Dart", "PHP"]
+  },
+  {
+    "title": "Backend & data",
+    "skills": ["Node.js", "REST APIs", "MongoDB", "MySQL"]
+  },
+  {
+    "title": "Product",
+    "skills": ["Flutter", "Firebase"]
+  },
+  {
+    "title": "AI & ML",
+    "skills": ["TensorFlow", "OpenCV", "Machine learning"]
+  },
+  {
+    "title": "Ways of working",
+    "skills": ["Git & GitHub", "Problem solving", "Teamwork", "Communication"]
+  }
+]

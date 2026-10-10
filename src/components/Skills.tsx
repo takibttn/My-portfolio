@@ -1,11 +1,12 @@
 import { skillGroups } from "@/data/portfolio";
+import { sectionLabel } from "@/lib/format";
 
-export function Skills() {
+export function Skills({ index = 5 }: { index?: number }) {
   return (
     <section className="section section--tint" aria-labelledby="skills-title">
       <div className="container">
         <div className="section-heading section-heading--row">
-          <p className="section-heading__label">04 / Toolkit</p>
+          <p className="section-heading__label">{sectionLabel(index, "Toolkit")}</p>
           <h2 id="skills-title">The tools behind the work.</h2>
         </div>
 

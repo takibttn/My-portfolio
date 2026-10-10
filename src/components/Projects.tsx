@@ -1,12 +1,13 @@
 import { projects, socialLinks } from "@/data/portfolio";
+import { sectionLabel } from "@/lib/format";
 import { ProjectCard } from "./ProjectCard";
 
-export function Projects() {
+export function Projects({ index = 2 }: { index?: number }) {
   return (
     <section className="section" id="work" aria-labelledby="work-title">
       <div className="container">
         <div className="section-heading">
-          <p className="section-heading__label">02 / Selected work</p>
+          <p className="section-heading__label">{sectionLabel(index, "Selected work")}</p>
           <h2 id="work-title">Projects with a purpose.</h2>
           <p>
             A focused selection of work across mobile engineering and applied
