@@ -81,6 +81,10 @@ The whole design system is built on CSS custom properties, so theming is just a 
 - A tiny inline script ([`src/lib/theme.ts`](src/lib/theme.ts)) applies the saved theme to `<html>` before first paint, so there is no flash of the wrong theme.
 - The Contact block is intentionally dark in both modes via the fixed `--panel-dark` / `--panel-dark-fg` tokens, so it stays correct regardless of the active theme.
 
+## CV / resume page
+
+A printable CV is generated automatically from the same JSON content at [`/cv`](http://localhost:3000/cv) ([`src/app/cv/page.tsx`](src/app/cv/page.tsx)). It renders as a fixed paper-style sheet (independent of the site theme) with a **Download as PDF** button that opens the browser print dialog — choose "Save as PDF" to export. The CV is linked from the header nav, the hero, and the contact section. Because it reads the same `content/` files, updating your projects, experience, internships, education, or skills updates the CV too — no separate file to maintain.
+
 ## Deploy to Vercel
 
 This project uses Vercel's standard Next.js setup. The included `vercel.json` explicitly identifies the framework, while Vercel uses the existing `npm run build` script automatically.

@@ -1,9 +1,11 @@
 import { profile, socialLinks } from "@/data/portfolio";
+import { NavLink } from "./NavLink";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navigation = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
+  { label: "CV", href: "/cv" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -18,9 +20,9 @@ export function SiteHeader() {
 
         <nav className="site-nav" aria-label="Primary navigation">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
+            <NavLink key={item.href} href={item.href}>
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -42,9 +44,9 @@ export function SiteHeader() {
           </summary>
           <nav className="mobile-nav__panel" aria-label="Mobile navigation">
             {navigation.map((item) => (
-              <a key={item.href} href={item.href}>
+              <NavLink key={item.href} href={item.href}>
                 {item.label}
-              </a>
+              </NavLink>
             ))}
             <a href={socialLinks[0].href} target="_blank" rel="noreferrer">
               GitHub <span aria-hidden="true">↗</span>

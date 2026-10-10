@@ -1,5 +1,6 @@
 import { profile, socialLinks } from "@/data/portfolio";
 import { sectionLabel } from "@/lib/format";
+import Link from "next/link";
 
 export function Contact({ index = 6 }: { index?: number }) {
   return (
@@ -28,6 +29,9 @@ export function Contact({ index = 6 }: { index?: number }) {
               <a href={socialLinks[1].href} target="_blank" rel="noreferrer">
                 LinkedIn <span aria-hidden="true">↗</span>
               </a>
+              <Link href="/cv">
+                Download CV <span aria-hidden="true">↓</span>
+              </Link>
             </div>
           </div>
         </div>

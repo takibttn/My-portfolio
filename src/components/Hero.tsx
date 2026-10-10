@@ -1,4 +1,5 @@
 import { profile } from "@/data/portfolio";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -19,6 +20,9 @@ export function Hero() {
             <a className="button button--primary" href="#work">
               Explore my work <span aria-hidden="true">↓</span>
             </a>
+            <Link className="text-link" href="/cv">
+              View CV <span aria-hidden="true">↗</span>
+            </Link>
             <a
               className="text-link"
               href={`mailto:${profile.email}`}
