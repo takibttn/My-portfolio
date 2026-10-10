@@ -28,9 +28,12 @@ export default function CvPage() {
   return (
     <main className="cv-page" id="main-content">
       <div className="cv-actions">
-        <Link className="button button--outline" href="/">
+        <Link className="button button--ghost" href="/">
           ← Back to portfolio
         </Link>
+        <a className="button button--primary" href="/api/cv" download>
+          Download as PDF <span aria-hidden="true">↓</span>
+        </a>
         <PrintButton />
       </div>
 

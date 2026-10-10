@@ -385,6 +385,14 @@ a {
   transform: translateY(-2px);
 }
 
+.button--ghost {
+  color: var(--muted);
+}
+
+.button--ghost:hover {
+  color: var(--ink);
+}
+
 .text-link {
   align-items: center;
   border-bottom: 1px solid var(--line);

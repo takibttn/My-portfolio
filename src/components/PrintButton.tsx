@@ -4,10 +4,10 @@ export function PrintButton() {
   return (
     <button
       type="button"
-      className="button button--primary"
+      className="button button--outline"
       onClick={() => window.print()}
     >
-      Download as PDF <span aria-hidden="true">↓</span>
+      Print <span aria-hidden="true">⎙</span>
     </button>
   );
 }

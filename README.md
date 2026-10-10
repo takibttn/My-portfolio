@@ -83,7 +83,12 @@ The whole design system is built on CSS custom properties, so theming is just a 
 
 ## CV / resume page
 
-A printable CV is generated automatically from the same JSON content at [`/cv`](http://localhost:3000/cv) ([`src/app/cv/page.tsx`](src/app/cv/page.tsx)). It renders as a fixed paper-style sheet (independent of the site theme) with a **Download as PDF** button that opens the browser print dialog — choose "Save as PDF" to export. The CV is linked from the header nav, the hero, and the contact section. Because it reads the same `content/` files, updating your projects, experience, internships, education, or skills updates the CV too — no separate file to maintain.
+A printable CV is generated automatically from the same JSON content at [`/cv`](http://localhost:3000/cv) ([`src/app/cv/page.tsx`](src/app/cv/page.tsx)). It renders as a fixed paper-style sheet (independent of the site theme) with two actions:
+
+- **Download as PDF** — fetches a real PDF file from the `/api/cv` route handler ([`src/app/api/cv/route.ts`](file:///c:/Users/EM/OneDrive/Desktop/test/rkd/src/app/api/cv/route.ts), built with [pdfkit](https://pdfkit.org)) and saves it directly (no print dialog).
+- **Print** — opens the browser print dialog (use "Save as PDF" there if you prefer the native exporter). The print stylesheet hides the site chrome and formats for A4.
+
+The CV is linked from the header nav, the hero, and the contact section. Because both the page and the PDF read the same `content/` files, updating your projects, experience, internships, education, or skills updates them too — no separate file to maintain.
 
 ## Deploy to Vercel
 
