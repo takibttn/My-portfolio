@@ -1,4 +1,5 @@
 import { profile, socialLinks } from "@/data/portfolio";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navigation = [
   { label: "Work", href: "#work" },
@@ -23,14 +24,17 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
-          className="header-cta"
-          href={socialLinks[0].href}
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub <span aria-hidden="true">↗</span>
-        </a>
+        <div className="header-actions">
+          <ThemeToggle />
+          <a
+            className="header-cta"
+            href={socialLinks[0].href}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </div>
 
         <details className="mobile-nav">
           <summary>

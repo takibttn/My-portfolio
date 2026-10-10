@@ -10,8 +10,27 @@
   --moss-light: #dfe7dd;
   --sand: #e8e0d4;
   --white: #fcfcf8;
+  /* Always-dark panel (contact block). Fixed so it stays correct in both themes. */
+  --panel-dark: #151713;
+  --panel-dark-fg: #fcfcf8;
   --display: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   --sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #141512;
+  --paper-deep: #1b1d18;
+  --ink: #ece9dd;
+  --muted: #9c9e92;
+  --line: #2f322b;
+  --moss: #83b596;
+  --moss-light: #202b25;
+  --sand: #2a271f;
+  --white: #141512;
+  --panel-dark: #0f100c;
+  --panel-dark-fg: #ece9dd;
+  color-scheme: dark;
 }
 
 * {
@@ -31,6 +50,49 @@ body {
   line-height: 1.6;
   margin: 0;
   min-width: 20rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body {
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+}
+
+/* Theme toggle */
+.theme-toggle {
+  align-items: center;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 0.5rem;
+  height: 2.25rem;
+  justify-content: center;
+  letter-spacing: 0.02em;
+  padding: 0 0.75rem;
+  transition: border-color 180ms ease, background-color 180ms ease, color 180ms ease;
+  width: 2.25rem;
+}
+
+.theme-toggle:hover {
+  border-color: var(--moss);
+  color: var(--moss);
+}
+
+.theme-toggle__icon {
+  display: inline-flex;
+  line-height: 1;
+}
+
+@media (min-width: 56.0625rem) {
+  .theme-toggle {
+    width: auto;
+  }
 }
 
 ::selection {
@@ -174,6 +236,12 @@ a {
 .header-cta:hover {
   border-color: var(--moss);
   color: var(--moss);
+}
+
+.header-actions {
+  align-items: center;
+  display: flex;
+  gap: 1.25rem;
 }
 
 .mobile-nav {
@@ -525,7 +593,7 @@ a {
 }
 
 .project-card__body p {
-  color: #4e524a;
+  color: var(--muted);
   font-size: 0.875rem;
   line-height: 1.75;
   max-width: 28rem;
@@ -612,13 +680,13 @@ a {
 
 /* Skills */
 .skill-grid {
-  border-top: 1px solid #c8c9bd;
+  border-top: 1px solid var(--line);
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .skill-group {
-  border-right: 1px solid #c8c9bd;
+  border-right: 1px solid var(--line);
   padding: 1.4rem 1.25rem 0 0;
 }
 
@@ -646,15 +714,15 @@ a {
 }
 
 .skill-group li {
-  border-top: 1px solid #c8c9bd;
+  border-top: 1px solid var(--line);
   font-size: 0.875rem;
   padding-block: 0.7rem;
 }
 
 /* Contact */
 .contact {
-  background: var(--ink);
-  color: var(--white);
+  background: var(--panel-dark);
+  color: var(--panel-dark-fg);
   padding-block: clamp(5.5rem, 9vw, 9rem);
 }
 
@@ -772,13 +840,17 @@ a {
   }
 
   .skill-group:nth-child(n + 4) {
-    border-top: 1px solid #c8c9bd;
+    border-top: 1px solid var(--line);
   }
 }
 
 @media (max-width: 56rem) {
   .site-nav,
   .header-cta {
+    display: none;
+  }
+
+  .theme-toggle__label {
     display: none;
   }
 
@@ -925,7 +997,7 @@ a {
 
   .skill-group,
   .skill-group:not(:first-child) {
-    border-right: 1px solid #c8c9bd;
+    border-right: 1px solid var(--line);
     padding: 1.25rem 0.9rem 0 0;
   }
 
@@ -935,7 +1007,7 @@ a {
   }
 
   .skill-group:nth-child(n + 3) {
-    border-top: 1px solid #c8c9bd;
+    border-top: 1px solid var(--line);
   }
 
   .skill-group h3 {

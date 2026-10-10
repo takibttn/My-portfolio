@@ -1,19 +1,37 @@
-import { experience } from "@/data/portfolio";
+import type { ExperienceItem } from "@/data/types";
 import { sectionLabel } from "@/lib/format";
 
-export function Experience({ index = 3 }: { index?: number }) {
-  if (experience.length === 0) return null;
+type TimelineSectionProps = {
+  id: string;
+  index: number;
+  label: string;
+  heading: string;
+  items: ExperienceItem[];
+};
+
+/**
+ * Shared timeline list used by the Experience and Internships sections. Renders
+ * nothing when `items` is empty so an unused section never shows up.
+ */
+export function TimelineSection({
+  id,
+  index,
+  label,
+  heading,
+  items,
+}: TimelineSectionProps) {
+  if (items.length === 0) return null;
 
   return (
-    <section className="section" id="experience" aria-labelledby="experience-title">
+    <section className="section" id={id} aria-labelledby={`${id}-title`}>
       <div className="container">
         <div className="section-heading section-heading--row">
-          <p className="section-heading__label">{sectionLabel(index, "Experience")}</p>
-          <h2 id="experience-title">Where I&apos;ve worked.</h2>
+          <p className="section-heading__label">{sectionLabel(index, label)}</p>
+          <h2 id={`${id}-title`}>{heading}</h2>
         </div>
 
         <div className="education-list">
-          {experience.map((item) => (
+          {items.map((item) => (
             <article
               className="education-item"
               key={`${item.period}-${item.role}`}
@@ -28,7 +46,9 @@ export function Experience({ index = 3 }: { index?: number }) {
                     <a
                       className="text-link"
                       href={item.href}
-                      target={item.href.startsWith("http") ? "_blank" : undefined}
+                      target={
+                        item.href.startsWith("http") ? "_blank" : undefined
+                      }
                       rel="noreferrer"
                     >
                       Visit <span aria-hidden="true">&#8599;</span>

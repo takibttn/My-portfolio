@@ -3,6 +3,7 @@ import rawSocial from "../../content/social.json";
 import rawProjects from "../../content/projects.json";
 import rawEducation from "../../content/education.json";
 import rawExperience from "../../content/experience.json";
+import rawInternships from "../../content/internships.json";
 import rawSkills from "../../content/skills.json";
 import type {
   EducationItem,
@@ -65,6 +66,16 @@ export const education: EducationItem[] = (rawEducation as EducationItem[])
   }));
 
 export const experience: ExperienceItem[] = (rawExperience as ExperienceItem[])
+  .filter((item) => Boolean(item?.role))
+  .map((item) => ({
+    period: item.period ?? "",
+    role: item.role,
+    organization: item.organization ?? "",
+    description: item.description,
+    href: item.href,
+  }));
+
+export const internships: ExperienceItem[] = (rawInternships as ExperienceItem[])
   .filter((item) => Boolean(item?.role))
   .map((item) => ({
     period: item.period ?? "",

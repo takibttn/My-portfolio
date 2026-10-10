@@ -7,6 +7,7 @@ A clean, editorial portfolio for a software engineer working across full-stack d
 - Next.js 16 with the App Router
 - React 19 and TypeScript
 - Tailwind CSS 4 with a custom CSS design system
+- Light / dark theme with a persisted, no-flash toggle
 - ESLint with the Next.js ruleset
 
 ## Local development
@@ -35,6 +36,7 @@ All portfolio content lives in plain JSON files inside the [`content/`](content)
 | `content/social.json`      | Social links (GitHub, LinkedIn, …)                             |
 | `content/projects.json`    | Project cards                                                  |
 | `content/experience.json`  | Work-experience entries (section hides when the array is empty) |
+| `content/internships.json` | Internship entries (same shape; section hides when empty)       |
 | `content/education.json`   | Education entries                                                |
 | `content/skills.json`      | Skill groups                                                     |
 
@@ -69,6 +71,15 @@ Append an object to `content/experience.json`. Once it has at least one entry, t
 Adding or reordering entries in `education.json` and `skills.json` works the same way.
 
 The layout and design system are in [`src/app/globals.css`](src/app/globals.css). The bridge between the JSON files and the UI is [`src/data/portfolio.ts`](src/data/portfolio.ts), which reads the content, validates it, and derives the auto-numbering and theme fallbacks — you normally won't need to edit it.
+
+## Theming (light / dark)
+
+The whole design system is built on CSS custom properties, so theming is just a second set of values:
+
+- The light palette lives in `:root` and the dark palette in `[data-theme="dark"]` inside [`src/app/globals.css`](src/app/globals.css). Add a new color by defining a token in both blocks.
+- The theme is chosen by the toggle in the header ([`src/components/ThemeToggle.tsx`](src/components/ThemeToggle.tsx)), stored in `localStorage`, and defaults to the visitor's system `prefers-color-scheme`.
+- A tiny inline script ([`src/lib/theme.ts`](src/lib/theme.ts)) applies the saved theme to `<html>` before first paint, so there is no flash of the wrong theme.
+- The Contact block is intentionally dark in both modes via the fixed `--panel-dark` / `--panel-dark-fg` tokens, so it stays correct regardless of the active theme.
 
 ## Deploy to Vercel
 

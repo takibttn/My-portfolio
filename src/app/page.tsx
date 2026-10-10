@@ -1,28 +1,26 @@
 import { Contact } from "@/components/Contact";
 import { Education } from "@/components/Education";
-import { Experience } from "@/components/Experience";
 import { Hero } from "@/components/Hero";
 import { Projects } from "@/components/Projects";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { Skills } from "@/components/Skills";
-import { experience } from "@/data/portfolio";
+import { TimelineSection } from "@/components/TimelineSection";
+import { experience, internships } from "@/data/portfolio";
 import { sectionLabel } from "@/lib/format";
 
 export default function Home() {
-  // Section numbers are assigned in order here. Add or remove a <section> and
-  // the numbering updates automatically — no need to edit the components.
-  // When the experience section has no entries it renders nothing, so the
-  // sections after it shift up by one to avoid a gap in the numbering.
-  const hasExperience = experience.length > 0;
-  let next = 1;
-  const aboutIndex = next++;
-  const projectsIndex = next++;
-  const experienceIndex = next++;
-  const educationIndex = next++;
-  const skillsIndex = next++;
-  const contactIndex = next++;
-  const offset = hasExperience ? 0 : 1;
+  // Section numbers are assigned in render order here. Optional sections that
+  // have no content render nothing, so we only number the ones that appear —
+  // no gaps, and no need to edit the individual components.
+  let n = 0;
+  const aboutIndex = ++n;
+  const projectsIndex = ++n;
+  const experienceIndex = experience.length > 0 ? ++n : 0;
+  const internshipsIndex = internships.length > 0 ? ++n : 0;
+  const educationIndex = ++n;
+  const skillsIndex = ++n;
+  const contactIndex = ++n;
 
   return (
     <>
@@ -63,10 +61,26 @@ export default function Home() {
         </section>
 
         <Projects index={projectsIndex} />
-        <Experience index={experienceIndex} />
-        <Education index={educationIndex - offset} />
-        <Skills index={skillsIndex - offset} />
-        <Contact index={contactIndex - offset} />
+
+        <TimelineSection
+          id="experience"
+          index={experienceIndex}
+          label="Experience"
+          heading="Where I've worked."
+          items={experience}
+        />
+
+        <TimelineSection
+          id="internships"
+          index={internshipsIndex}
+          label="Internships"
+          heading="Learning by doing."
+          items={internships}
+        />
+
+        <Education index={educationIndex} />
+        <Skills index={skillsIndex} />
+        <Contact index={contactIndex} />
       </main>
       <SiteFooter />
     </>

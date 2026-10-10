@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { profile } from "@/data/portfolio";
+import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 const siteUrl =
@@ -41,12 +42,15 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#f4f3ed",
-  colorScheme: "light",
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="light" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>{children}</body>
     </html>
   );
