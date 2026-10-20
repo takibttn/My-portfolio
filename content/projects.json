@@ -1,12 +1,21 @@
 [
   {
+    "slug": "rl-penalty-kick",
+    "category": "Reinforcement learning",
+    "title": "RL Penalty Kick Simulation",
+    "description": "An AI goalkeeper that learns to save penalty kicks with PPO inside a physics-based 2D simulation. Built a custom Gymnasium environment over PyMunk physics with normalized state, discrete actions, and reward shaping, trained the policy for 100k steps, benchmarked its save rate, and deployed it into an interactive PyGame shootout you can play against.",
+    "stack": ["Python", "Gymnasium", "Stable-Baselines3", "PyMunk", "PyGame"],
+    "href": "https://github.com/takibttn/rl-penalty-kick-simulation.git",
+    "theme": "moss"
+  },
+  {
     "slug": "hemocare",
     "category": "Mobile product",
     "title": "HemoCare",
     "description": "An intelligent mobile application that digitizes the blood donor process, making donor discovery and participation easier to manage.",
     "stack": ["Flutter", "Dart", "Firebase"],
     "href": "https://github.com/takibttn/hemocare.git",
-    "theme": "moss"
+    "theme": "sand"
   },
   {
     "slug": "face-recognition",
@@ -15,6 +24,6 @@
     "description": "A real-time face recognition system built with data preprocessing, TensorFlow, and OpenCV for live detection.",
     "stack": ["Python", "TensorFlow", "OpenCV"],
     "href": "https://github.com/takibttn/facetracker.git",
-    "theme": "sand"
+    "theme": "moss"
   }
 ]
